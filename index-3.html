@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yogen Mudgal - Financial Analyst & Data Scientist. Portfolio showcasing quantitative finance projects and financial modeling expertise.">
+    <meta name="author" content="Yogen Mudgal">
+    <title>Yogen Mudgal - Financial Analyst & Data Scientist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-primary: #0c447c;
+            --color-secondary: #378add;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f8f9fa;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #666666;
+            --color-text-muted: #999999;
+            --color-border: #e0e0e0;
+            --color-hover: #f0f0f0;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-primary: #85b7eb;
+                --color-secondary: #b5d4f4;
+                --color-bg: #1a1a1a;
+                --color-bg-secondary: #2d2d2d;
+                --color-text: #e8e8e8;
+                --color-text-secondary: #b0b0b0;
+                --color-text-muted: #808080;
+                --color-border: #404040;
+                --color-hover: #333333;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: var(--color-secondary);
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        
+        /* Header */
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .header-content {
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 18px;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .bio {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            background: var(--color-bg);
+            color: var(--color-primary);
+            transition: all 0.2s;
+        }
+        
+        .contact-link:hover {
+            background: var(--color-hover);
+            border-color: var(--color-primary);
+            text-decoration: none;
+        }
+        
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--color-border);
+            padding-top: 1rem;
+        }
+        
+        .nav-tab {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid transparent;
+            background: transparent;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .nav-tab:hover {
+            color: var(--color-text);
+            border-color: var(--color-border);
+        }
+        
+        .nav-tab.active {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+            background: var(--color-hover);
+        }
+        
+        /* Sections */
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .project-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .project-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .project-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        
+        .project-date {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            white-space: nowrap;
+        }
+        
+        .project-description {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .expand-indicator {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+        
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .project-details.expanded {
+            max-height: 1500px;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .detail-section {
+            margin-bottom: 1rem;
+        }
+        
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .detail-label {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+        
+        .detail-content {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+        
+        .tech-tag {
+            font-size: 12px;
+            background: var(--color-bg-secondary);
+            color: var(--color-text);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-category {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+        
+        .skill-item {
+            font-size: 13px;
+            background: var(--color-bg);
+            color: var(--color-text);
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .about-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+        
+        .about-section p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+        
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .edu-school {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+        }
+        
+        .edu-degree {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .edu-description {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-muted);
+            font-size: 13px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .project-header {
+                flex-direction: column;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Yogen Mudgal</h1>
+                <p class="title">Financial Analyst & Data Scientist</p>
+                <p class="bio">M.S. Business Analytics (STEM) from USC Marshall School of Business. Specialized in financial modeling, quantitative analysis, and data-driven decision-making with experience in investment banking, restructuring, and capital markets.</p>
+                <div class="contact-links">
+                    <a href="/cdn-cgi/l/email-protection#8ff6e0e8eae1e2faebe8eee3bdbbcfe8e2eee6e3a1ece0e2" class="contact-link">📧 Email</a>
+                    <a href="https://linkedin.com/in/yogenmudgal24" class="contact-link">💼 LinkedIn</a>
+                    <a href="tel:+12137320568" class="contact-link">📱 +1 (213) 732-0568</a>
+                </div>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showSection('projects')">Projects</button>
+                <button class="nav-tab" onclick="showSection('skills')">Skills</button>
+                <button class="nav-tab" onclick="showSection('about')">About</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Projects Section -->
+            <div id="projects" class="section active">
+                <div class="project-grid">
+                    <div class="project-card" onclick="toggleProject(this)">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">CPI-Surprise Trading Strategy</div>
+                                <div class="project-date">2024</div>
+                            </div>
+                        </div>
+                        <div class="project-description">Quantitative analysis of inflation-based trading strategy across monetary cycles with rigorous transaction cost treatment</div>
+                        <div class="expand-indicator">Click to expand →</div>
+                        <div class="project-details">
+                            <div class="detail-section">
+                                <div class="detail-label">Overview</div>
+                                <div class="detail-content">Comprehensive quantitative analysis testing a CPI-surprise trading strategy across 20 years (2004-2024). The strategy trades SPY and QQQ based on whether actual CPI inflation comes in above or below market expectations. Analysis includes period breakdown, factor regression, and realistic transaction cost treatment (10 bps per position change).</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Key Findings</div>
+                                <div class="detail-content">
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Transaction costs (2.4% annually) eliminate strategy edge in full sample (Sharpe: -0.022)</li>
+                                        <li>Strategy shows regime dependence: Strong performance in high-inflation 2020-2024 (Sharpe: 0.65+)</li>
+                                        <li>CPI timing is valuable, but directional prediction adds noise (long-only outperforms directional)</li>
+                                        <li>No statistically significant alpha after controlling for standard risk factors (p &gt; 0.30)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Methodology</div>
+                                <div class="detail-content">
+                                    Tested trading signals generated from CPI surprise (actual vs. consensus). Positions entered next trading day with daily rebalancing between equity and risk-free assets. Analyzed performance across full sample and sub-periods. Conducted Fama-French 4-factor regression to isolate alpha. Modeled realistic transaction costs (10 bps per position change).
+                                </div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Deliverables</div>
+                                <div class="detail-content">
+                                    <a href="CPI Trading Strategy Analysis.pdf" target="_blank" style="display: inline-block; margin-right: 15px; padding: 8px 12px; background: #0c447c; color: white; border-radius: 4px; text-decoration: none; font-size: 14px;">📄 Analysis PDF</a>
+                                    <a href="https://github.com/ymudgal24/ymudgal24.github.io/blob/main/CPI Trading Strategy Analysis Suppot File.ipynb" target="_blank" style="display: inline-block; padding: 8px 12px; background: #0c447c; color: white; border-radius: 4px; text-decoration: none; font-size: 14px;">📓 Jupyter Notebook</a>
+                                </div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Tools & Methods</div>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Quantitative Finance</span>
+                                    <span class="tech-tag">Statistical Analysis</span>
+                                    <span class="tech-tag">Factor Regression</span>
+                                    <span class="tech-tag">Time Series</span>
+                                    <span class="tech-tag">Risk Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+</div>
+
+                    <div class="project-card" onclick="toggleProject(this)">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Insurance Loss Cost Prediction Model</div>
+                                <div class="project-date">2024</div>
+                            </div>
+                        </div>
+                        <div class="project-description">Classification-regression pipeline for estimating insurance claim costs with feature importance analysis</div>
+                        <div class="expand-indicator">Click to expand →</div>
+                        <div class="project-details">
+                            <div class="detail-section">
+                                <div class="detail-label">Objective</div>
+                                <div class="detail-content">Build a machine learning model to predict loss costs for insurance claims using historical claim data and underwriting characteristics</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Approach</div>
+                                <div class="detail-content">Engineered features from raw claim data, trained ensemble models (Random Forest, Gradient Boosting), performed cross-validation, and evaluated on MSE, MAE, and R² metrics</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Impact</div>
+                                <div class="detail-content">Identified key drivers of claim severity and created interpretable model for underwriter decision-making</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Tools & Methods</div>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Scikit-learn</span>
+                                    <span class="tech-tag">Feature Engineering</span>
+                                    <span class="tech-tag">Predictive Modeling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" onclick="toggleProject(this)">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Wine Price Regression Analysis</div>
+                                <div class="project-date">2024</div>
+                            </div>
+                        </div>
+                        <div class="project-description">Quantified the impact of wine ratings and characteristics on pricing using multiple regression modeling</div>
+                        <div class="expand-indicator">Click to expand →</div>
+                        <div class="project-details">
+                            <div class="detail-section">
+                                <div class="detail-label">Objective</div>
+                                <div class="detail-content">Develop a regression model to understand which factors (ratings, vintage, region, varietal) most strongly influence wine pricing</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Key Insights</div>
+                                <div class="detail-content">Rating score was the strongest predictor of price, with each additional point worth approximately 15% premium. Regional prestige and vintage age showed significant elasticity effects</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Tools & Methods</div>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Regression Modeling</span>
+                                    <span class="tech-tag">Statistical Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" onclick="toggleProject(this)">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Bank M&A Impact Dissertation</div>
+                                <div class="project-date">2022</div>
+                            </div>
+                        </div>
+                        <div class="project-description">Assessment of post-financial crisis European bank mergers & acquisitions and their impact on shareholder value</div>
+                        <div class="expand-indicator">Click to expand →</div>
+                        <div class="project-details">
+                            <div class="detail-section">
+                                <div class="detail-label">Scope</div>
+                                <div class="detail-content">Examined 35 M&A transactions across European banking sector from 2008-2022, analyzing abnormal returns and long-term value creation</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Methodology</div>
+                                <div class="detail-content">Event study analysis with CAR (cumulative abnormal returns), regression analysis of deal characteristics vs. shareholder value, post-acquisition performance tracking</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Key Findings</div>
+                                <div class="detail-content">Cross-border deals and strategic consolidations generated positive long-term returns. Cost-cutting focused deals showed mixed results in maintaining market share</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Tools & Methods</div>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Financial Analysis</span>
+                                    <span class="tech-tag">Event Study</span>
+                                    <span class="tech-tag">Econometrics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" onclick="toggleProject(this)">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">Bankruptcy & Restructuring Analysis</div>
+                                <div class="project-date">2025</div>
+                            </div>
+                        </div>
+                        <div class="project-description">Strategic financial analysis of distressed companies across multiple Chapter 11 restructurings</div>
+                        <div class="expand-indicator">Click to expand →</div>
+                        <div class="project-details">
+                            <div class="detail-section">
+                                <div class="detail-label">Scope</div>
+                                <div class="detail-content">Analyzed bankruptcy filings and financial disclosures for cases with over $2 billion in aggregate unsecured claims, developing recovery scenarios for creditor committees</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Deliverables</div>
+                                <div class="detail-content">Recovery memos outlining creditor recovery projections; cash flow models under multiple liquidation/reorganization scenarios; DIP financing analyses for liquidity assessment</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Impact</div>
+                                <div class="detail-content">Strategic insights translated to 5 creditor committees, enabling informed negotiation on restructuring plans and maximizing recovery rates</div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Tools & Methods</div>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Financial Modeling</span>
+                                    <span class="tech-tag">Scenario Analysis</span>
+                                    <span class="tech-tag">MS Excel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills" class="section">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical & Programming</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">VBA</span>
+                            <span class="skill-item">Tableau</span>
+                            <span class="skill-item">Bloomberg</span>
+                            <span class="skill-item">Capital IQ</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Financial Analysis</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Financial Modeling</span>
+                            <span class="skill-item">Valuation</span>
+                            <span class="skill-item">M&A Analysis</span>
+                            <span class="skill-item">Risk Analysis</span>
+                            <span class="skill-item">Capital Markets</span>
+                            <span class="skill-item">Restructuring</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data Science & Analytics</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Predictive Modeling</span>
+                            <span class="skill-item">Regression Analysis</span>
+                            <span class="skill-item">Statistical Analysis</span>
+                            <span class="skill-item">Feature Engineering</span>
+                            <span class="skill-item">Data Visualization</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Professional</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Client Relations</span>
+                            <span class="skill-item">Presentations</span>
+                            <span class="skill-item">Project Management</span>
+                            <span class="skill-item">Strategic Thinking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div id="about" class="section">
+                <div class="about-section">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <div class="edu-school">M.S. Business Analytics (STEM)</div>
+                        <div class="edu-degree">University of Southern California, Marshall School of Business</div>
+                        <div class="edu-description">Expected May 2026 | Dean's List</div>
+                        <div class="edu-description" style="margin-top: 0.5rem;">Specialization in quantitative finance and predictive analytics. Graduate Teaching Assistant for Real-time Strategy for AI.</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-school">B.S. Accounting & Finance</div>
+                        <div class="edu-degree">University of Warwick, Warwick Business School</div>
+                        <div class="edu-description">July 2022</div>
+                        <div class="edu-description" style="margin-top: 0.5rem;">Assistant Editor for Reinvention Journal; peer review of 50+ research papers across multiple disciplines.</div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3>Professional Experience</h3>
+                    <div class="education-item">
+                        <div class="edu-school">Restructuring Intern</div>
+                        <div class="edu-degree">Province, LLC – Miami, Florida</div>
+                        <div class="edu-description">June 2025 – August 2025</div>
+                        <div class="edu-description" style="margin-top: 0.5rem;">Extracted insights from $2B+ bankruptcy filings. Developed recovery analyses and DIP financing models for creditor committees. Delivered strategic presentations translating complex financial findings for stakeholder decision-making.</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-school">Associate Banker & DCM Analyst</div>
+                        <div class="edu-degree">Barclays Corporate and Investment Bank – London, England</div>
+                        <div class="edu-description">July 2022 – June 2024</div>
+                        <div class="edu-description" style="margin-top: 0.5rem;">Structured €20B+ in covered bond issuances. Developed financial projections and credit analyses for 25+ underwriting cases. Optimized mortgage-backed programs reducing over-collateralisation by 10%.</div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3>Certifications & Languages</h3>
+                    <div class="edu-description">
+                        <strong>Certifications:</strong> Chartered Institute of Securities and Investment (UK Regulations, Securities, Derivatives)<br><br>
+                        <strong>Languages:</strong> English (fluent), Hindi (fluent), German (B1)
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 Yogen Mudgal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        function toggleProject(card) {
+            const details = card.querySelector('.project-details');
+            details.classList.toggle('expanded');
+            
+            // Scroll to card if expanded
+            if (details.classList.contains('expanded')) {
+                setTimeout(() => {
+        
