@@ -407,7 +407,7 @@
                 <p class="title">Financial Analyst & Data Scientist</p>
                 <p class="bio">M.S. Business Analytics (STEM) from USC Marshall School of Business. Specialized in financial modeling, quantitative analysis, and data-driven decision-making with experience in investment banking, restructuring, and capital markets.</p>
                 <div class="contact-links">
-                    <a href="mailto:yogenmudgal24@gmail.com" class="contact-link">📧 Email</a>
+                    <a href="/cdn-cgi/l/email-protection#8ff6e0e8eae1e2faebe8eee3bdbbcfe8e2eee6e3a1ece0e2" class="contact-link">📧 Email</a>
                     <a href="https://linkedin.com/in/yogenmudgal24" class="contact-link">💼 LinkedIn</a>
                     <a href="tel:+12137320568" class="contact-link">📱 +1 (213) 732-0568</a>
                 </div>
@@ -426,32 +426,56 @@
                     <div class="project-card" onclick="toggleProject(this)">
                         <div class="project-header">
                             <div>
-                                <div class="project-title">CPI-surprise Trading Strategy</div>
+                                <div class="project-title">CPI-Surprise Trading Strategy</div>
                                 <div class="project-date">2024</div>
                             </div>
                         </div>
-                        <div class="project-description">Quantitative analysis of inflation-based trading strategy performance across monetary policy cycles</div>
+                        <div class="project-description">Quantitative analysis of inflation-based trading strategy across monetary cycles with rigorous transaction cost treatment</div>
                         <div class="expand-indicator">Click to expand →</div>
                         <div class="project-details">
                             <div class="detail-section">
-                                <div class="detail-label">Objective</div>
-                                <div class="detail-content">Tested a CPI-surprise trading strategy to identify outperformance patterns relative to monetary policy tightening cycles</div>
+                                <div class="detail-label">Overview</div>
+                                <div class="detail-content">Comprehensive quantitative analysis testing a CPI-surprise trading strategy across 20 years (2004-2024). The strategy trades SPY and QQQ based on whether actual CPI inflation comes in above or below market expectations. Analysis includes period breakdown, factor regression, and realistic transaction cost treatment (10 bps per position change).</div>
                             </div>
                             <div class="detail-section">
                                 <div class="detail-label">Key Findings</div>
-                                <div class="detail-content">Strategy demonstrated higher risk-adjusted returns (Sharpe ratio) during periods of monetary tightening, with significant alpha generation in Q1-Q2 cycles</div>
+                                <div class="detail-content">
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Transaction costs (2.4% annually) eliminate strategy edge in full sample (Sharpe: -0.022)</li>
+                                        <li>Strategy shows regime dependence: Strong performance in high-inflation 2020-2024 (Sharpe: 0.65+)</li>
+                                        <li>CPI timing is valuable, but directional prediction adds noise (long-only outperforms directional)</li>
+                                        <li>No statistically significant alpha after controlling for standard risk factors (p &gt; 0.30)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Methodology</div>
+                                <div class="detail-content">
+                                    Tested trading signals generated from CPI surprise (actual vs. consensus). Positions entered next trading day with daily rebalancing between equity and risk-free assets. Analyzed performance across full sample and sub-periods. Conducted Fama-French 4-factor regression to isolate alpha. Modeled realistic transaction costs (10 bps per position change).
+                                </div>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">Deliverables</div>
+                                <div class="detail-content">
+                                    <a href="CPI_Trading_Strategy_Analysis.pdf" target="_blank" style="display: inline-block; margin-right: 15px; padding: 8px 12px; background: #0c447c; color: white; border-radius: 4px; text-decoration: none; font-size: 14px;">📄 Analysis PDF</a>
+                                    <a href="https://github.com/ymudgal24/ymudgal24.github.io/blob/main/FBE551_CPI_Trading_Strategy_CLEANED.ipynb" target="_blank" style="display: inline-block; padding: 8px 12px; background: #0c447c; color: white; border-radius: 4px; text-decoration: none; font-size: 14px;">📓 Jupyter Notebook</a>
+                                </div>
                             </div>
                             <div class="detail-section">
                                 <div class="detail-label">Tools & Methods</div>
                                 <div class="tech-tags">
                                     <span class="tech-tag">Python</span>
                                     <span class="tech-tag">Quantitative Finance</span>
-                                    <span class="tech-tag">Risk Analysis</span>
+                                    <span class="tech-tag">Statistical Analysis</span>
+                                    <span class="tech-tag">Factor Regression</span>
                                     <span class="tech-tag">Time Series</span>
+                                    <span class="tech-tag">Risk Analysis</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+</div>
 
                     <div class="project-card" onclick="toggleProject(this)">
                         <div class="project-header">
@@ -680,7 +704,7 @@
         </footer>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('.section').forEach(section => {
@@ -703,10 +727,4 @@
             // Scroll to card if expanded
             if (details.classList.contains('expanded')) {
                 setTimeout(() => {
-                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 100);
-            }
-        }
-    </script>
-</body>
-</html>
+        
